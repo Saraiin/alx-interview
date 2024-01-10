@@ -1,3 +1,8 @@
+#!/usr/bin/python3
+"""Check if all boxes (list of lists array where each element is a box
+containing keys to other elements) are unlocked"""
+
+
 def canUnlockAll(boxes):
     # Set to keep track of unlocked boxes
     unlocked_boxes = {0}
