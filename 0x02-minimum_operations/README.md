@@ -4,4 +4,10 @@ In a text file, there is a single character H. Your text editor can execute only
 
 - Prototype: def minOperations(n)<br>
 - Returns an integer<br>
-- If n is impossible to achieve, return 0
+- If n is impossible to achieve, return 0<br>
+<b>Example:</b>
+n = 9
+
+H => Copy All => Paste => HH => Paste =>HHH => Copy All => Paste => HHHHHH => Paste => HHHHHHHHH
+
+Number of operations: 6
