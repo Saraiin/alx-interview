@@ -1,7 +1,12 @@
 #!/usr/bin/python3
 """Minimum Operations to print n times of a letter (H)"""
 
+
 def minOperations(n):
+    """function that return the minimum operations needed
+    to print n"H" in a file by using two operations "Copy All"
+    and "Paste"
+    """
     if n == 1:
         return 0
 
