@@ -1,36 +1,36 @@
 #!/usr/bin/python3
-"""Parses log"""
-import sys
-import signal
+"""Parses log parsing"""
+from sys import stdin
 
 
-def compute_metrics(lines):
-    total_size = 0
-    status_counts = {200: 0, 301: 0, 400: 0, 401: 0, 403: 0, 404: 0, 405: 0, 500: 0}
+def print_stats(status_code, size):
+    """function that prints stat"""
+    print("File size: {size}".format(size=size))
+    for code in sorted(status_code):
+        if status_code.get(code) != 0:
+            print("{c}: {v}".format(c=code, v=status_code.get(code)))
 
-    for line in lines:
-        try:
-            # Splitting the line to extract relevant information
-            parts = line.split()
-            ip_address, date, method, status_code, file_size = parts[0], parts[3][1:], parts[5], int(parts[8]), int(parts[9])
 
-            # Updating total file size
-            total_size += file_size
+i = 0
+size = 0
+status_code = {"200": 0, "301": 0, "400": 0, "401": 0,
+               "403": 0, "404": 0, "405": 0, "500": 0}
 
-            # Updating status code counts
-            if status_code in status_counts:
-                status_counts[status_code] += 1
+try:
+    for line in stdin:
+        line = line.rstrip()
+        line = line.split(" ")
+        if len(line) > 2:
+            line.reverse()
+            code = line[1]
+            size += int(line[0])
 
-        except (ValueError, IndexError):
-            # Skip lines that do not match the expected format
-            continue
+            if code in status_code.keys():
+                status_code.update({code: status_code.get(code) + 1})
 
-    return total_size, status_counts
+            i += 1
 
-def print_metrics(total_size, status_counts):
-    print(f'Total file size: {total_size}')
-
-    for code in sorted(status_counts.keys()):
-        count = status_counts[code]
-        if count > 0:
-            print(f'{code}: {count}')
+            if i % 10 == 0:
+                print_stats(status_code, size)
+finally:
+    print_stats(status_code, size)
