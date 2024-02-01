@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """UTF-8 Validation"""
 
+
 def validUTF8(data):
     def count_starting_bits(byte):
         count = 0
