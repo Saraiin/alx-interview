@@ -10,6 +10,8 @@ def count_starting_bits(byte):
 
 
 def validUTF8(data):
+    """ function to test if utf-8"""
+
     i = 0
     while i < len(data):
         start_bits = count_starting_bits(data[i])
