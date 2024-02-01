@@ -2,13 +2,14 @@
 """UTF-8 Validation"""
 
 
-def validUTF8(data):
-    def count_starting_bits(byte):
-        count = 0
-        while byte & (1 << (7 - count)):
-            count += 1
-        return count
+def count_starting_bits(byte):
+    count = 0
+    while byte & (1 << (7 - count)):
+        count += 1
+    return count
 
+
+def validUTF8(data):
     i = 0
     while i < len(data):
         start_bits = count_starting_bits(data[i])
