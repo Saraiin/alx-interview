@@ -4,3 +4,4 @@
 - Lockbox<br>
 - minimum operation
 - LOg parsing
+-Utf-8
