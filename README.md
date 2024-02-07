@@ -2,7 +2,7 @@
 <h2> Projects :memo: </h2>
 - Pascal's Triangle <br>
 - Lockbox<br>
-- minimum operation
-- LOg parsing
-- Utf-8 
+- minimum operation <br>
+- Log parsing <br>
+- Utf-8 <br>
 - N Queens
