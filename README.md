@@ -4,4 +4,5 @@
 - Lockbox<br>
 - minimum operation
 - LOg parsing
--Utf-8
+-Utf
+-0x05. N Queens
