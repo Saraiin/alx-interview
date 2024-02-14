@@ -6,3 +6,4 @@
 - Log parsing <br>
 - Utf-8 <br>
 - N Queens
+- starwars_api
