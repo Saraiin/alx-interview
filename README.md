@@ -5,5 +5,5 @@
 - Minimum operation <br>
 - Log parsing <br>
 - Utf-8 <br>
-- N Queens
+- N Queens <br>
 - starwars_api
