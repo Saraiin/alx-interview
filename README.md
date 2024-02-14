@@ -7,3 +7,5 @@
 - Utf-8 <br>
 - N Queens <br>
 - starwars api
+
+👩🏻‍💻: using python
